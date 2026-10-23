@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>iPhone - Cayra</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="iphone">
+    <!-- Notch -->
+    <div class="notch"></div>
+
+    <!-- LOCK SCREEN -->
+    <div id="lockscreen" class="screen">
+      <div class="lock-time" id="time">09:41</div>
+      <div class="lock-date" id="date">Jumat, 23 Oktober</div>
+      <div class="lock-hint">Geser ke atas untuk membuka</div>
+
+      <div id="passcode-screen" class="hidden">
+        <p>Masukkan Kode Sandi</p>
+        <p class="hint">Hint: tulis hint di sini</p>
+        <input type="password" id="passcode" maxlength="6" placeholder="••••••">
+        <div class="passcode-buttons">
+          <button onclick="checkPasscode()">OK</button>
+          <button onclick="cancelPasscode()">Batal</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- HOME SCREEN -->
+    <div id="homescreen" class="screen hidden">
+      <div class="status-bar">
+        <span id="home-time">09:41</span>
+        <div class="status-icons">
+          <span>■■■</span>
+          <span>📶</span>
+          <span>🔋</span>
+        </div>
+      </div>
+
+      <div class="apps-grid" id="apps-grid">
+        <!-- Aplikasi akan diisi lewat JavaScript -->
+      </div>
+
+      <div class="dock">
+        <div class="app" onclick="openApp('phone')">
+          <div class="icon phone">📞</div>
+        </div>
+        <div class="app" onclick="openApp('safari')">
+          <div class="icon safari">🧭</div>
+        </div>
+        <div class="app" onclick="openApp('messages')">
+          <div class="icon messages">💬</div>
+        </div>
+        <div class="app" onclick="openApp('music')">
+          <div class="icon music">🎵</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHATSAPP -->
+    <div id="whatsapp" class="app-screen hidden">
+      <div class="wa-header">
+        <button onclick="closeApp()">←</button>
+        <span>WhatsApp</span>
+        <span></span>
+      </div>
+      <div class="wa-list" id="whatsapp-list"></div>
+    </div>
+
+    <!-- CHAT DETAIL -->
+    <div id="chat-detail" class="app-screen hidden">
+      <div class="wa-header">
+        <button onclick="backToList()">←</button>
+        <div class="chat-header-info">
+          <img id="chat-pp" src="" class="chat-pp">
+          <span id="chat-name">Nama</span>
+        </div>
+        <span></span>
+      </div>
+      <div class="wa-chat-bg">
+        <div id="chat-messages" class="chat-messages"></div>
+      </div>
+    </div>
+
+    <!-- NOTES -->
+    <div id="notes" class="app-screen hidden">
+      <div class="app-header">
+        <button onclick="closeApp()">←</button>
+        <h3>Notes</h3>
+      </div>
+      <div class="content" id="notes-content"></div>
+    </div>
+
+    <!-- PHOTOS -->
+    <div id="photos" class="app-screen hidden">
+      <div class="app-header">
+        <button onclick="closeApp()">←</button>
+        <h3>Photos</h3>
+      </div>
+      <div class="content" id="photos-content">
+        <p style="text-align:center;margin-top:40px;opacity:0.6">Belum ada foto</p>
+      </div>
+    </div>
+
+    <!-- MUSIC -->
+    <div id="music" class="app-screen hidden">
+      <div class="app-header">
+        <button onclick="closeApp()">←</button>
+        <h3>Music</h3>
+      </div>
+      <div class="content" id="music-content">
+        <p style="text-align:center;margin-top:40px;opacity:0.6">Coming soon</p>
+      </div>
+    </div>
+
+    <!-- ROBLOX -->
+    <div id="roblox" class="app-screen hidden">
+      <div class="app-header">
+        <button onclick="closeApp()">←</button>
+        <h3>Roblox</h3>
+      </div>
+      <div class="content">
+        <p style="text-align:center;margin-top:40px;opacity:0.6">Roblox App</p>
+      </div>
+    </div>
+
+    <!-- INSTAGRAM -->
+    <div id="instagram" class="app-screen hidden">
+      <div class="app-header">
+        <button onclick="closeApp()">←</button>
+        <h3>Instagram</h3>
+      </div>
+      <div class="content" id="instagram-list"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
